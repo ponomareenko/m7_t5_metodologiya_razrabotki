@@ -3,8 +3,6 @@ import ru.netology.PhoneBook;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.HashMap;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -91,7 +89,7 @@ public class PhoneBookTest {
         phoneBook.add("Настя", "79624222661");
         phoneBook.add("Данил", "79624602075");
 
-        PrintStream orginalOut = System.out;
+        PrintStream originalOut = System.out;
 
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         System.setOut(new PrintStream(output));
@@ -102,6 +100,6 @@ public class PhoneBookTest {
         // Assert
         assertEquals("Данил\nНастя" + System.lineSeparator(), output.toString());
 
-        System.setOut(orginalOut);
+        System.setOut(originalOut);
     }
 }

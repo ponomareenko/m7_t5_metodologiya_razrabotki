@@ -1,31 +1,27 @@
 package ru.netology;
 
-import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class PhoneBook {
-    Map<String, String> listContacts = new TreeMap<>();
+    Map<String, String> listContactsName = new TreeMap<>();
+    Map<String, String> listContactsPhone = new TreeMap<>();
 
     public int add(String name, String phone) {
-        listContacts.put(name, phone);
-        return listContacts.size();
+        listContactsName.put(name, phone);
+        listContactsPhone.put(phone, name);
+        return listContactsName.size();
     }
 
     public String findByNumber(String phone) {
-        for (Map.Entry<String, String> contact : listContacts.entrySet()) {
-            if (phone.equals(contact.getValue())) {
-                return contact.getKey();
-            }
-        }
-        return null;
+        return listContactsPhone.get(phone);
     }
 
     public String findByName(String name) {
-        return listContacts.get(name);
+        return listContactsName.get(name);
     }
 
     public void printAllNames() {
-        listContacts.keySet().stream().forEach(System.out::println);
+        listContactsName.keySet().stream().forEach(System.out::println);
     }
 }
