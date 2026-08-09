@@ -48,4 +48,18 @@ public class PhoneBookTest {
         // Assert
         assertEquals(expected, result);
     }
+
+    @Test
+    public void findByNumberTest() {
+        System.out.println("findByNumberTest");
+
+        // Arrange
+        String expected = "Данил";
+
+        // Act
+        String result = phoneBook.findByNumber();
+
+        // Assert
+        assertEquals(expected, result);
+    }
 }
