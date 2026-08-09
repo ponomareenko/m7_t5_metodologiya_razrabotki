@@ -36,14 +36,14 @@ public class PhoneBookTest {
         System.out.println("addTest");
 
         // Arrange
-//        Map<String, String> listContacts = new HashMap<>();
+        int sizeList;
         int expected = 2;
 
         // Act
-//        listContacts.put("Данил", "79624602075");
-//        listContacts.put("Настя", "79624222661");
+        sizeList = phoneBook.add("Данил", "79624602075");
+        sizeList = phoneBook.add("Настя", "79624222661");
 
-        int result = phoneBook.add();
+        int result = sizeList;
 
         // Assert
         assertEquals(expected, result);
@@ -54,10 +54,28 @@ public class PhoneBookTest {
         System.out.println("findByNumberTest");
 
         // Arrange
+        phoneBook.add("Данил", "79624602075");
+        phoneBook.add("Настя", "79624222661");
         String expected = "Данил";
 
         // Act
-        String result = phoneBook.findByNumber();
+        String result = phoneBook.findByNumber("79624602075");
+
+        // Assert
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void findByNameTest() {
+        System.out.println("findByNameTest");
+
+        // Arrange
+        phoneBook.add("Данил", "79624602075");
+        phoneBook.add("Настя", "79624222661");
+        String expected = "79624602075";
+
+        // Act
+        String result = phoneBook.findByName();
 
         // Assert
         assertEquals(expected, result);

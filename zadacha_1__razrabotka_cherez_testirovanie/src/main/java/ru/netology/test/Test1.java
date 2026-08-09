@@ -4,14 +4,22 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class Test1 {
+    public static Map<String, String> listContacts = new TreeMap<>();
+
     static void main(String[] args) {
-        Map<Integer, String> users = new TreeMap<>();
+        listContacts.put("Данил", "79624602075");
+        listContacts.put("Настя", "79624222661");
 
-        users.put(3, "Alex");
-        users.put(1, "Ivan");
-        users.put(1, "Semen");
+        System.out.println(listContacts);
 
-        System.out.println(users);
-        // {1=Ivan, 2=Semen, 3=Alex}
+    }
+
+    public String findByNumber(String phone) {
+        for (Map.Entry<String, String> contact : listContacts.entrySet()) {
+            if (phone.equals(contact.getValue())) {
+                return contact.getKey();
+            }
+        }
+        return null;
     }
 }
