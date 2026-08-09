@@ -1,6 +1,8 @@
 import org.junit.jupiter.api.*;
 import ru.netology.PhoneBook;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -86,11 +88,20 @@ public class PhoneBookTest {
         System.out.println("printAllNamesTest");
 
         // Arrange
-        phoneBook.add("Данил", "79624602075");
         phoneBook.add("Настя", "79624222661");
+        phoneBook.add("Данил", "79624602075");
+
+        PrintStream orginalOut = System.out;
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(output));
 
         // Act
+        phoneBook.printAllNames();
 
         // Assert
+        assertEquals("Данил\nНастя" + System.lineSeparator(), output.toString());
+
+        System.setOut(orginalOut);
     }
 }

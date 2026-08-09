@@ -1,4 +1,4 @@
-package ru.netology.test;
+package ru.netology.tests;
 
 import java.util.Map;
 import java.util.TreeMap;
