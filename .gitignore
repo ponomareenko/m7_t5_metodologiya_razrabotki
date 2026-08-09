@@ -1,1 +1,5 @@
+/zadacha_1__razrabotka_cherez_testirovanie/.gitignore
 /zadacha_1__razrabotka_cherez_testirovanie/.idea
+/zadacha_1__razrabotka_cherez_testirovanie/.mvn
+/zadacha_1__razrabotka_cherez_testirovanie/src/main/resources
+/zadacha_1__razrabotka_cherez_testirovanie/src/main/java/ru/netology/tests
