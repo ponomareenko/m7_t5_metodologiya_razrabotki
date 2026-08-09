@@ -21,7 +21,11 @@ public class PhoneBook {
         return null;
     }
 
-    public String findByName() {
-        return null;
+    public String findByName(String name) {
+        return listContacts.get(name);
+    }
+
+    public void printAllNames() {
+//        listContacts.keySet().stream().forEach(System.out::println);
     }
 }
